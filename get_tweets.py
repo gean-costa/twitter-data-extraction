@@ -4,11 +4,12 @@ import json
 import argparse
 import logging
 
+# logging.basicConfig(format='[%(levelname)s]: %(message)s', level=logging.INFO)
+logging.basicConfig(format='[%(levelname)s][%(asctime)s]: %(message)s',
+                    datefmt='%d/%m/%Y %I:%M:%S %p', level=logging.INFO)
+
 
 def search_tweets_default(api, q, lang, count=100):
-    # logging.basicConfig(format='[%(levelname)s]: %(message)s', level=logging.INFO)
-    logging.basicConfig(format='[%(levelname)s][%(asctime)s]: %(message)s',
-                        datefmt='%d/%m/%Y %I:%M:%S %p', level=logging.INFO)
     logging.info('Extraindo tweets no modo DEFAULT')
     logging.info(f'Busca pelos termos: {q}')
     logging.info('Extração de tweets iniciada')
@@ -20,9 +21,6 @@ def search_tweets_default(api, q, lang, count=100):
 
 
 def search_tweets(api, q, lang, count=100):
-    # logging.basicConfig(format='[%(levelname)s]: %(message)s', level=logging.INFO)
-    logging.basicConfig(format='[%(levelname)s][%(asctime)s]: %(message)s',
-                        datefmt='%d/%m/%Y %I:%M:%S %p', level=logging.INFO)
     logging.info('Extraindo tweets no modo EXTENDED')
     logging.info(f'Busca pelos termos: {q}')
     logging.info('Extração de tweets iniciada')
@@ -54,8 +52,6 @@ def search_tweets(api, q, lang, count=100):
 
 
 def to_txt(tweets, filename):
-    logging.basicConfig(format='[%(levelname)s][%(asctime)s]: %(message)s',
-                        datefmt='%d/%m/%Y %I:%M:%S %p', level=logging.INFO)
     logging.info(f'Criando o arquivo {filename}.txt')
     with open(f'{filename}.txt', 'a') as writer:
         json.dump(tweets, writer, indent=4, ensure_ascii=False)

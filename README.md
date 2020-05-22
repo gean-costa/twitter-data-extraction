@@ -49,7 +49,7 @@ python get_tweets.py --lang en coronavirus coronavirus_tweets --mode extended
 ~~~
 
 ### Lincença
-Copyright 2010 Geandreson Costa.
+Copyright 2020 Geandreson Costa.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
