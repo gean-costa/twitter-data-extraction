@@ -48,7 +48,7 @@ A coleta dos tweets pode ser feita em dois modos:
 python get_tweets.py --lang en coronavirus coronavirus_tweets --mode extended
 ~~~
 
-### Lincensa
+### Lincença
 Copyright 2010 Geandreson Costa.
 
 Licensed under the Apache License, Version 2.0 (the "License");
