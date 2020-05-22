@@ -1,6 +1,5 @@
 import tweepy
 import json
-# import pymongo
 import argparse
 import logging
 
