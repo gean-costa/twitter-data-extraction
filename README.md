@@ -20,7 +20,7 @@ Uma vez que você já possua esses tokens, use o arquivo `tokens.json` mostrado 
 * [tweepy](http://docs.tweepy.org/en/latest/)
 
 ### Exemplos de uso
-Informações gerais sobre o funcionamento dos scripts podem ser visualizadas utilizando o comando:
+Informações gerais sobre o funcionamento dos scripts podem ser visualizadas utilizando os comandos:
 
 ~~~
 python get_tweets.py -h
