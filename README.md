@@ -20,12 +20,16 @@ Uma vez que você já possua esses tokens, use o arquivo `tokens.json` mostrado 
 * [tweepy](http://docs.tweepy.org/en/latest/)
 
 ### Exemplos de uso
-Informações gerais sobre o funcionamento do script podem ser visualizadas utilizando o comando:
+Informações gerais sobre o funcionamento dos scripts podem ser visualizadas utilizando o comando:
 
 ~~~
 python get_tweets.py -h
 ~~~
+~~~
+python get_user_tweets.py -h
+~~~
 
+#### get_tweets.py
 Para coletar tweets com o termo de busca __coronavirus__, tendo como arquivo de saída __coronavirus_tweets__, execute o comando:
 ~~~
 python get_tweets.py coronavirus coronavirus_tweets
@@ -41,11 +45,27 @@ Para coletar tweets em um idioma em específico:
 python get_tweets.py --lang en coronavirus coronavirus_tweets
 ~~~
 
+#### get_user_tweets.py
+Para coletar tweets de um perfil em específico:
+~~~
+python get_users_tweets.py --username @folha
+~~~
+No exemplo anterior, o arquivo gerado contém o nome do perfil (folha.txt, por exemplo). Caso queira um nome diferente para o arquivo de saída, use o comando:
+~~~
+python get_users_tweets.py --username @folha --output folha_tweets
+~~~
+A coleção de tweets obtidas consiste naqueles escritos pelo perfil, suas replies à outras postagens e retweets. Caso deseje excluir replies e/ou retweets:
+~~~
+python get_users_tweets.py --username @folha --exclude_rts --exclude_replies
+~~~
 A coleta dos tweets pode ser feita em dois modos:
-1. __default__: coleta somente 100 tweets, padrão da API, pois é feita somente uma requisição para ela. É o modo padrão de coleta de tweets do script.
-2. __extended__: executa várias requisições, coletando 100 tweets cada, até que seja atingido o Rate Limit da API. Dessa forma, este modo permite uma coleta mais vasta de tweets.
+1. __default__: é feita somente uma requisição para a API. É o modo padrão de coleta dos scripts. Coleta até 100 tweets para `get_tweets.py` e até 200 tweets para `get_users_tweets.py`.
+2. __extended__: executa várias requisições até que seja atingido o Rate Limit da API. Dessa forma, este modo permite uma coleta mais vasta de tweets.
 ~~~
 python get_tweets.py --lang en coronavirus coronavirus_tweets --mode extended
+~~~
+~~~
+python get_users_tweets.py --username @folha --mode extended
 ~~~
 
 ### Licença
