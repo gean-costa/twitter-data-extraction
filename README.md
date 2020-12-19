@@ -25,13 +25,13 @@ Uma vez que você já possua esses tokens, use o arquivo `tokens.json` mostrado 
 ## Exemplos de uso
 Informações gerais sobre o funcionamento dos scripts podem ser visualizadas utilizando os comandos:
 
-~~~
+~~~bash
 python get_tweets.py -h
 ~~~
-~~~
+~~~bash
 python get_user_tweets.py -h
 ~~~
-~~~
+~~~bash
 python get_liked_tweets.py -h
 ~~~
 
